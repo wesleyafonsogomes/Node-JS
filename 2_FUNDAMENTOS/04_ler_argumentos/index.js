@@ -2,11 +2,20 @@
 
 console.log(process.argv);
 
+// argumento está no terceiro indice
+
 const args = process.argv.slice(2);
 
 console.log(args);
 
-const nome = args[0].split("=")[1]; // pegando primeiro elemento 
+// pegando só o nome agora
+
+const nome = args[0].split("=")[1];
+
 console.log(nome);
 
-console.log(`O nome dele é ${nome} e a idade é ${idade}`);
+// para idade agr
+
+const idade = args[1].split("=")[1];
+
+console.log(`O nome é ${nome} e ele tem ${idade} anos`); 
