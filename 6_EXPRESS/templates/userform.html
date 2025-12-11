@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Usuário</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid black;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.418);
+        }
+    </style>
+</head>
+<body>
+        <h1>Adicionar usuário</h1>
+        <form action="/users/save" method="POST">
+            <div>
+                <input type="text" name="name" placeholder="Digite um nome">
+            </div>
+            <div>
+                <input type="text" name="age" placeholder="Digite a idade">
+            </div>
+            <div>
+                <input type="submit" value="Cadastrar" />
+            </div>
+        </form>
+</body>
+</html>
