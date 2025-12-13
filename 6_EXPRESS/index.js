@@ -14,6 +14,11 @@ app.use(
 // let e transformar em json
 app.use(express.json())
 
+// arquivos estáticos 
+
+app.use(express.static("public"))
+
+
 // rota principal 
 
 const users = require("./users")
@@ -23,6 +28,12 @@ app.use("/users", users)
 
 const path = require("path")
 const basePath = path.join(__dirname, "../templates")
+
+// midlware do error 404
+
+app.use((req,res,next) => {
+    res.status(404).sendFile(`${basePath}/404.html`)
+})
 
 // middlewares
 
@@ -39,6 +50,7 @@ const checkAuth = (req,res,next) => {
 }
 
 // app.use(checkAuth);
+
 
 app.listen(PORT, () => {
     console.log(`Online na porta: ${PORT}`)
